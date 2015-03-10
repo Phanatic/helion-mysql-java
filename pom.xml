@@ -11,6 +11,22 @@
       <outputDirectory>build\classes</outputDirectory>
       <plugins>
         <plugin>
+          <groupId>org.cloudfoundry</groupId>
+          <artifactId>cf-maven-plugin</artifactId>
+          <version>1.0.4</version>
+          <configuration>
+              <appname>helion-mysql-java</appname>
+              <memory>512</memory>
+              <services>
+                  <service>
+                      <name>helion-mysql-java-db</name>
+                      <label>mysql</label>
+                      <provider>mysql</provider>
+                  </service>
+              </services>
+          </configuration>
+      </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId>
           <configuration>
